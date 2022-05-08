@@ -1,0 +1,30 @@
+name: Test and Release
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  test-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test greetings
+        run: cd $GITHUB_WORKSPACE/pkg/greetings && go test
+  test-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test greetings
+        run: cd $GITHUB_WORKSPACE/ts-tool && npm test
+
+ release:
+  # Only release on push to main
+  if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  runs-on: ubuntu-latest
+
+  - name: Release
+   run: npx semantic-release
+   env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
