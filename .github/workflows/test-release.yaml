@@ -21,6 +21,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Release
         run: cd $GITHUB_WORKSPACE && npx semantic-release
         env:
