@@ -19,11 +19,9 @@ jobs:
       - name: Test greetings
         run: cd $GITHUB_WORKSPACE/ts-tool && npm test
   release:
-  # Only release on push to main
-  if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-  runs-on: ubuntu-latest
-  steps:
-    - name: Release
-      run: npx semantic-release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
