@@ -1,0 +1,15 @@
+{
+  "name": "ts-tool",
+  "version": "1.0.0",
+  "description": "A simple tool  written in typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "4.1.2",
+    "mocha": "^10.0.0"
+  }
+}
