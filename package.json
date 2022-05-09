@@ -23,5 +23,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "semantic-release-monorepo": "^7.0.5"
   }
 }
