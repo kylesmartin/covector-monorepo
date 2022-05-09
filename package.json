@@ -1,0 +1,27 @@
+{
+  "name": "test-monorepo",
+  "version": "1.0.0",
+  "description": "A multi-language monorepo for testing versioning tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylesmartin/test-monorepo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylesmartin/test-monorepo/issues"
+  },
+  "homepage": "https://github.com/kylesmartin/test-monorepo#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
