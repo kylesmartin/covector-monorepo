@@ -24,8 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Installations
-        run: cd $GITHUB_WORKSPACE && npm i
       - name: Release
         run: cd $GITHUB_WORKSPACE && npx semantic-release
         env:
