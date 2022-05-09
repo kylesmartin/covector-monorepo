@@ -5,6 +5,5 @@
         "@semantic-release/github"
     ],
     "branches": ["main", "next"],
-    "repositoryUrl": "https://github.com/kylesmartin/test-monorepo.git",
-    "extends": "semantic-release-monorepo"
+    "repositoryUrl": "https://github.com/kylesmartin/test-monorepo.git"
 }
