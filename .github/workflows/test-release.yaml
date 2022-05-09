@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Release
-        run: cd $GITHUB_WORKSPACE && npx semantic-release
+        run: cd $GITHUB_WORKSPACE/pkg/greetings && npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
