@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Installations
+        run: cd $GITHUB_WORKSPACE/ts-tool && npm i
       - name: Test ts-tool
         run: cd $GITHUB_WORKSPACE/ts-tool && npm test
   release:
