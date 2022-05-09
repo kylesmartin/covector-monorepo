@@ -1,0 +1,23 @@
+name: greetings-release
+
+on:
+  push:
+    tags:
+      - "greetings-v*+.*+.*" # Push events to matching v*, i.e. greetings-v1.0
+      - "greetings-v*+.*+.*+-rc*" # Push events to matching v*, i.e. greetings-v1.0-rc1
+
+jobs:
+  release-gauntlet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test Greetings
+        run: cd $GITHUB_WORKSPACE/pkg/greetings && go test
+      - name: Build Greetings
+        run: cd $GITHUB_WORKSPACE/pkg/hello && go build
+      - name: Release Greetings
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            $GITHUB_WORKSPACE/pkg/**
+            $GITHUB_WORKSPACE/pkg/hello/hello

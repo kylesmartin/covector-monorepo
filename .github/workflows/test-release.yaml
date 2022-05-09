@@ -3,7 +3,7 @@ name: Test and Release
 on:
   pull_request:
   push:
-    branches: [ main ]
+    branches: [ none ]
 
 jobs:
   test-go:
