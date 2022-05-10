@@ -7,15 +7,19 @@ on:
       - "greetings-v[0-9]+.[0-9]+.[0-9]+-rc*" # Push events to matching v*, i.e. greetings-v1.0-rc1
 
 jobs:
-  release-gauntlet:
+  release-greetings:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f25a3a9f25bd5f4c5d77189cab02ff357b5aedeb
       - name: Test Greetings
-        run: cd $GITHUB_WORKSPACE/pkg/greetings && go test
-      - name: Build and Release Greetings
+        run: cd pkg/greetings && go test
+      - name: Build Greetings
+        run: cd pkg/hello && go build
+      - name: Generate Archive
+        run: tar cfvz greetings.tar.gz pkg/**
+      - name: Release Greetings
         uses: softprops/action-gh-release@v1
-        run: cd $GITHUB_WORKSPACE/pkg/hello && go build
         with:
           files: |
-            $GITHUB_WORKSPACE/pkg/hello/hello
+            greetings.tar.gz
+            pkg/hello/hello
