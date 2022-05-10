@@ -12,13 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Test Greetings
-        working_directory: ./pkg/greetings
-        run: go test
-      - name: Build Greetings
-        working_directory: ./pkg/hello
-        run: go build
-      - name: Release Greetings
+        run: cd $GITHUB_WORKSPACE/pkg/greetings && go test
+      - name: Build and Release Greetings
         uses: softprops/action-gh-release@v1
+        run: cd $GITHUB_WORKSPACE/pkg/hello && go build
         with:
           files: |
-            ./pkg/hello/hello
+            $GITHUB_WORKSPACE/pkg/hello/hello
