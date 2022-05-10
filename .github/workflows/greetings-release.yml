@@ -1,0 +1,24 @@
+name: greetings-release
+
+on:
+  push:
+    tags:
+      - "greetings-v[0-9]+.[0-9]+.[0-9]" # Push events to matching v*, i.e. greetings-v1.0
+      - "greetings-v[0-9]+.[0-9]+.[0-9]+-rc*" # Push events to matching v*, i.e. greetings-v1.0-rc1
+
+jobs:
+  release-gauntlet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test Greetings
+        working_directory: ./pkg/greetings
+        run: go test
+      - name: Build Greetings
+        working_directory: ./pkg/hello
+        run: go build
+      - name: Release Greetings
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ./pkg/hello/hello
