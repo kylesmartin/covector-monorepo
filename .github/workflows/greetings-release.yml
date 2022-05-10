@@ -11,15 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@f25a3a9f25bd5f4c5d77189cab02ff357b5aedeb
+      - name: Set Env Variables
+        run: echo "PKG_NAME=greetings" >> $GITHUB_ENV
+        if: startsWith(github.ref, 'refs/tags/greetings-')
       - name: Test Greetings
-        run: cd pkg/greetings && go test
+        run: cd pkg/${{env.PKG_NAME}} && go test
       - name: Build Greetings
         run: cd pkg/hello && go build
       - name: Generate Archive
-        run: tar cfvz greetings.tar.gz pkg/**
+        run: tar cfvz ${{env.PKG_NAME}}.tar.gz pkg/**
       - name: Release Greetings
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            greetings.tar.gz
+            ${{env.PKG_NAME}}.tar.gz
             pkg/hello/hello
