@@ -1,5 +1,5 @@
 {
-  "name": "test-monorepo",
+  "name": "covector-monorepo",
   "version": "1.0.0",
   "description": "A multi-language monorepo for testing versioning tools",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/kylesmartin/test-monorepo.git"
   },
-  "author": "",
+  "author": "Kyle Martin <kylesmartin19@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kylesmartin/test-monorepo/issues"
@@ -24,15 +24,6 @@
     "@covector/command": "^0.5.1",
     "@covector/files": "^0.5.1",
     "action": "0.0.1",
-    "covector": "^0.7.3",
-    "cz-conventional-changelog": "^3.3.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "dependencies": {
-    "semantic-release-monorepo": "^7.0.5"
+    "covector": "^0.7.3"
   }
 }
