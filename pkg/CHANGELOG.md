@@ -1,5 +1,10 @@
 # Changelog
 
+## \[1.3.0]
+
+- Add new greeting (Yo)
+  - [ff257c3](https://github.com/kylesmartin/covector-monorepo.git/commit/ff257c3f254f02b0b1978838d4b8bd926d9f4864) Add yo greeting on 2022-05-17
+
 ## \[1.2.0]
 
 - Add new printBye function to ts-tool
