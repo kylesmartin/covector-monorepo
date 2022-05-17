@@ -11,7 +11,7 @@
   },
   "packages": {
     "greetings-go": {
-      "path": "./pkg",
+      "path": "./pkg/greetings",
       "manager": "github"
     },
     "ts-tool": {
