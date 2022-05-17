@@ -10,9 +10,9 @@
     }
   },
   "packages": {
-    "test-monorepo": {
-      "path": ".",
-      "manager": "javascript"
+    "greetings-go": {
+      "path": "./pkg",
+      "manager": "golang"
     },
     "ts-tool": {
       "path": "./ts-tool",
