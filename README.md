@@ -1,2 +1,2 @@
 # covector-monorepo
-A multi-language monorepo for testing versioning tools
+A multi-language monorepo for testing the covector versioning tool
