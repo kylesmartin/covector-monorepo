@@ -5,7 +5,7 @@
       "version": true,
       "publish": [
         "git tag ${ pkg.pkg }-v${ pkgFile.version }",
-        "git push --tags"
+        "git push origin ${ pkg.pkg }-v${ pkgFile.version }"
       ]
     }
   },
