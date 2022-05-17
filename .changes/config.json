@@ -1,25 +1,22 @@
 {
   "gitSiteUrl": "https://github.com/kylesmartin/covector-monorepo.git",
   "pkgManagers": {
-    "javascript": {
+    "github": {
       "version": true,
-      "getPublishedVersion": "npm view ${ pkgFile.pkg.name } version",
       "publish": [
-        "npm publish --access public"
+        "git tag ${ pkg.pkg }-v${ pkgFile.version }",
+        "git push --tags"
       ]
-    },
-    "golang": {
-      "version": true
     }
   },
   "packages": {
     "greetings-go": {
       "path": "./pkg",
-      "manager": "golang"
+      "manager": "github"
     },
     "ts-tool": {
       "path": "./ts-tool",
-      "manager": "javascript"
+      "manager": "github"
     }
   }
 }
