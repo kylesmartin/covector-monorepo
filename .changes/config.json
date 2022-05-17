@@ -1,5 +1,5 @@
 {
-  "gitSiteUrl": "https://github.com/kylesmartin/test-monorepo.git/",
+  "gitSiteUrl": "https://github.com/kylesmartin/covector-monorepo.git",
   "pkgManagers": {
     "javascript": {
       "version": true,
@@ -7,6 +7,9 @@
       "publish": [
         "npm publish --access public"
       ]
+    },
+    "golang": {
+      "version": true
     }
   },
   "packages": {
