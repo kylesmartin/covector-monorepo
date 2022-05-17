@@ -4,6 +4,7 @@
   "description": "A multi-language monorepo for testing versioning tools",
   "main": "index.js",
   "scripts": {
+    "covector": "node ./node_modules/covector/bin/covector.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,13 @@
   },
   "homepage": "https://github.com/kylesmartin/test-monorepo#readme",
   "devDependencies": {
+    "@covector/apply": "^0.6.1",
+    "@covector/assemble": "^0.8.2",
+    "@covector/changelog": "^0.6.1",
+    "@covector/command": "^0.5.1",
+    "@covector/files": "^0.5.1",
+    "action": "0.0.1",
+    "covector": "^0.7.3",
     "cz-conventional-changelog": "^3.3.0"
   },
   "config": {

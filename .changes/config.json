@@ -1,0 +1,22 @@
+{
+  "gitSiteUrl": "https://github.com/kylesmartin/test-monorepo.git/",
+  "pkgManagers": {
+    "javascript": {
+      "version": true,
+      "getPublishedVersion": "npm view ${ pkgFile.pkg.name } version",
+      "publish": [
+        "npm publish --access public"
+      ]
+    }
+  },
+  "packages": {
+    "test-monorepo": {
+      "path": ".",
+      "manager": "javascript"
+    },
+    "ts-tool": {
+      "path": "./ts-tool",
+      "manager": "javascript"
+    }
+  }
+}
