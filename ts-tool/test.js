@@ -6,3 +6,9 @@ describe('Testing printMsg function, should return "Hello World!" ', () => {
         expect(myapp.printMsg()).to.equal("Hello World!");
 	});
 });
+
+describe('Testing printBye function, should return "Bye!" ', () => {
+	it('Should Return Bye!', () => {
+        expect(myapp.printBye()).to.equal("Bye!");
+	});
+});
